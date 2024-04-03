@@ -75,9 +75,9 @@ public class NotaMenu {
 		System.out.println("Nota media " + service.calcularMedia());
 	}
 	
-	static void mostrarExtremas() {
+	static void mostrarExtremas() {		
+		System.out.println("Nota min: " + service.notaMin());
 		System.out.println("Nota max: " + service.notaMax());
-		System.out.println("Nota max: " + service.notaMin());
 	}
 	
 	static void obtenerNotas() {
