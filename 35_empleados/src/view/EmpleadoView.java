@@ -10,7 +10,7 @@ public class EmpleadoView {
 	public static void main(String[] args) {
 		//Objeto Scanner
 		Scanner scn = new Scanner(System.in);
-		//variable guarda la opción elegida
+		//Variable guarda la opción elegida
 		int opcion;
 		
 		do {
