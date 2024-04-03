@@ -10,8 +10,7 @@ public class EmpleadosService {
 	//Métodos
 	//Nuevo empleado
 	public boolean  nuevo(int codigo,String empleado ) {
-		//variable boolean en caso de no poder guardar al empleado
-		if(!empleados.containsKey(empleado)) {
+		if(!empleados.containsKey(codigo)) {
 		empleados.put(codigo, empleado);
 		return true;
 		}
@@ -22,12 +21,12 @@ public class EmpleadosService {
 	public String buscar(int codigo) {
 		//Variable guarda nombre del empelado
 		String empleado = "";
-		empleados.get(codigo);
+		empleado = empleados.get(codigo);
 		return empleado;
 	}
 	
 	//Eliminar empleado
-	public String eliminar(int clave, String valor) {	
+	public String eliminar(int clave) {	
 		return empleados.remove(clave);
 	}
 	

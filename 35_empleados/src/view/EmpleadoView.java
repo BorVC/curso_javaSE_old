@@ -63,13 +63,13 @@ public class EmpleadoView {
 		
 		static void agregarEmpleado() {
 			Scanner scn = new Scanner(System.in);
-			System.out.println("Introduce el código");
+			System.out.println("Código empleado:");
 			int codigo = Integer.parseInt(scn.nextLine());
-			System.out.println("Introduce el nombre");
+			System.out.println("Nombre empleado:");
 			String nombre= scn.nextLine();
 			
 			if(service.nuevo(codigo, nombre)) {
-				System.out.println("Hecho");
+				System.out.println("Añadido");
 			}else {
 				System.out.println("Código existente.No añadido!");
 			}
@@ -91,11 +91,9 @@ public class EmpleadoView {
 			Scanner scn = new Scanner(System.in);
 			System.out.println("Introduce el código del empleado");
 			int codigo = Integer.parseInt(scn.nextLine());
-			System.out.println("Introduce un nombre");
-			String nombre = scn.nextLine();
-;			String empleado = service.eliminar(codigo, nombre);
+     		String empleado = service.eliminar(codigo);
 			if(empleado == null) {
-				System.out.println("No existe empleado");
+				System.out.println("ERROR.No existe empleado");
 			}else {
 				System.out.println("El empleado eliminado es : " + empleado);
 			}
