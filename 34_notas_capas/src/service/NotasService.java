@@ -39,7 +39,7 @@ public class NotasService {
 	
 	//Calcular nota mínima
 	public double notaMin() {
-		double notaMinima = 0;
+		double notaMinima = 10;
 		for(double nota : notas) {
 			if(nota < notaMinima) {
 				notaMinima = nota;
