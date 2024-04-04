@@ -2,7 +2,7 @@ package principal;
 
 import java.util.ArrayList;
 
-public class pruebaLista {
+public class PruebaLista {
 
 	public static void main(String[] args) {
 		//Creación de objetos de la colección Arraylist

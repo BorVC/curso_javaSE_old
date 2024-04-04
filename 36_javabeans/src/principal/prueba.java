@@ -1,5 +1,7 @@
 package principal;
 
+import java.util.ArrayList;
+
 import model.Ciudad;
 
 public class prueba {
