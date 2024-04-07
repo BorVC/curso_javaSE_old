@@ -12,7 +12,7 @@ public class PruebaTabla {
 		ciudades.put("Madrid", 3200000);
 		ciudades.put("Barcelona", 3000000);
 		ciudades.put("Caceres",1299000);
-		
+		ciudades.put("Madri", 333300);
 		//Mostrar un elemento
 		System.out.println(ciudades.get("Madrid"));
 		
