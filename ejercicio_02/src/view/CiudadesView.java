@@ -9,7 +9,7 @@ public class CiudadesView {
 
 	//Objetos
 	//Objeto Ciudades
-	static Ciudades ciudad = new Ciudades();
+	//static Ciudades ciudad = new Ciudades();
 	//Objeto HashsSet
 	static CiudadesService service = new CiudadesService();
 	public static void main(String[] args) {
@@ -65,9 +65,7 @@ public class CiudadesView {
 		System.out.println("País de la ciudad:");
 		String pais = scn.nextLine();
 		//Objeto ciudad con los datos recopilados
-		ciudad.setNombre(nombre);
-		ciudad.setHabitantes(habitantes);
-		ciudad.setPais(pais);
+		Ciudades ciudad = new Ciudades(nombre,habitantes,pais);
 		//Llamada a la función de la clase CiudadesService
 		if(service.nuevaCiudad(ciudad)){
 			System.out.println("Hecho!!!Ciudad guardada correctamente");
@@ -94,6 +92,7 @@ public class CiudadesView {
 			System.out.println("Ciudad: "+ ciudad.getNombre());
 			System.out.println("-------------");
 		}
+		System.out.println(service.ciudadesPorPais(pais).size());
 	}
 
 }
