@@ -47,10 +47,6 @@ public class EmpleadoView {
 	
 	//Método presaentar menú
 		static void presentarMenu() {
-			//Objeto scanner
-			Scanner scn = new Scanner(System.in);
-			//Variable q guarda la opción escogida
-			int opcion = 0;
 			String textoMenu = """
 					           Utiliza las suiguientes opciones:
 	                           1- Agrege empleado .
