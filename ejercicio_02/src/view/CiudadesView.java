@@ -67,8 +67,13 @@ public class CiudadesView {
 		//Objeto ciudad con los datos recopilados
 		Ciudades ciudad = new Ciudades(nombre,habitantes,pais);
 		//Llamada a la función de la clase CiudadesService
+<<<<<<< HEAD
 		if(service.nuevaCiudad(ciudad)){
 			System.out.println("Hecho!!!.Ciudad guardada correctamente");
+=======
+		if(!service.nuevaCiudad(ciudad)){
+			System.out.println("Hecho!!!Ciudad guardada correctamente");
+>>>>>>> branch 'master' of https://github.com/BorVC/curso_javaSE.git
 		}
 		else {
 			System.out.println("Error!!!.La ciudad introducida ya corresponde a un país");
