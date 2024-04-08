@@ -68,7 +68,7 @@ public class CiudadesView {
 		Ciudades ciudad = new Ciudades(nombre,habitantes,pais);
 		//Llamada a la función de la clase CiudadesService
 		if(service.nuevaCiudad(ciudad)){
-			System.out.println("Hecho!!!Ciudad guardada correctamente");
+			System.out.println("Hecho!!!.Ciudad guardada correctamente");
 		}
 		else {
 			System.out.println("Error!!!.La ciudad introducida ya corresponde a un país");

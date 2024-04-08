@@ -18,7 +18,14 @@ public class CiudadesService {
 			return true;
 		}
 		return false;
-		
+		/*for(Ciudades ciu : ciudades) {
+			if(!ciu.getNombre().equals(ciudad.getNombre()) && !ciu.getPais().equals(ciudad.getPais())) {
+				ciudades.add(ciudad);
+				return true;
+			}
+			
+		}
+		return true;*/
 	}
 	
 	//2-Mostrar todos los datos de ciudad más poblada.Devukeve objet Ciudades con la info
@@ -28,7 +35,8 @@ public class CiudadesService {
 		//Iterar por el HashsSet comparando la pobación de las ciudades que guarda
 		for(Ciudades ciudad : ciudades) {
 			if(ciudad.getHabitantes() > ciudadMasHabiatantes.getHabitantes()) {
-				ciudadMasHabiatantes.setHabitantes(ciudad.getHabitantes());
+				//ciudadMasHabiatantes.setHabitantes(ciudad.getHabitantes());
+				ciudadMasHabiatantes = ciudad;
 			}
 		}
 		return ciudadMasHabiatantes;
