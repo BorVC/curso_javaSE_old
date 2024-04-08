@@ -14,7 +14,7 @@ public class CiudadesService {
 	//1- Agregar nueva ciudad al HashsSet como objeto Ciudades
 	public boolean nuevaCiudad(Ciudades ciudad) {
 		for(Ciudades ciu : ciudades) {
-			if(ciu.getNombre().equals(ciudad.getNombre()) && ciu.getPais().equals(ciudad.getPais())) {
+			if(!ciu.getNombre().equals(ciudad.getNombre()) && !ciu.getPais().equals(ciudad.getPais())) {
 				return true;
 			}
 		}
