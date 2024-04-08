@@ -68,11 +68,17 @@ public class PedidosView {
 		System.out.println("Unidades del pedido:");
 		int unidades = Integer.parseInt(scn.nextLine());
 		System.out.println("Fecha del pedido dd/MM/yyyy:");
+		try {
 		Date fecha = format.parse(scn.nextLine());//Pasar de cadena a fecha
 		
 		//Objeto clase Pedidos
 		Pedidos pedido = new Pedidos(producto,unidades,fecha);
 		service.nuevoPedido(pedido);
+		}
+		catch(ParseException ex) {
+			ex.printStackTrace();
+			System.out.println("Fecha no valida");
+		}
 	}
 	
 	static void pedidoUltimo() {

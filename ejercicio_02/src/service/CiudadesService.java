@@ -13,18 +13,20 @@ public class CiudadesService {
 	//Métodos
 	//1- Agregar nueva ciudad al HashsSet como objeto Ciudades
 	public boolean nuevaCiudad(Ciudades ciudad) {
-		if(!ciudades.contains(ciudad.getNombre()) && !ciudades.contains(ciudad.getPais())) {
-			ciudades.add(ciudad);
-			return true;
+		for(Ciudades ciu : ciudades) {
+			if(ciu.getNombre().equals(ciudad.getNombre()) && ciu.getPais().equals(ciudad.getPais())) {
+				return true;
+			}
 		}
+		ciudades.add(ciudad);
 		return false;
 		
 	}
 	
-	//2-Mostrar todos los datos de ciudad más poblada.Devukeve objet Ciudades con la info
+	//2-Mostrar todos los datos de ciudad más poblada.Devuelve objet Ciudades con la info
 	public Ciudades masPoblada() {
 		//Objeto guarda la ciudad con mayor población
-		Ciudades ciudadMasHabiatantes = new Ciudades();
+		Ciudades ciudadMasHabiatantes = null;
 		//Iterar por el HashsSet comparando la pobación de las ciudades que guarda
 		for(Ciudades ciudad : ciudades) {
 			if(ciudad.getHabitantes() > ciudadMasHabiatantes.getHabitantes()) {

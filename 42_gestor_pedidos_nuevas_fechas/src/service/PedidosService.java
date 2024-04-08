@@ -1,6 +1,7 @@
 package service;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -18,7 +19,7 @@ Se presenta el siguiente menú:
 
 2: Muestra los datos del pedido más reciente
 3: Se solicitan dos fechas, y se muestran los pedidos realizados
-4: Se solicita una fecha y nos muestra el pedido mas cercano a dicha fecha 
+4: Se solicita una fecha y nos muestra el pedido mas cercano a dicha fecha yyy
 en ese rango de fechas*/
 
 	//HashsSet
@@ -64,6 +65,51 @@ en ese rango de fechas*/
 		}
 		return pedidos;//ArrayList
 	}
+	
+	/*public Pedidos pedidoproximo(LocalDate fecha){
+	
+		Pedidos pedidoBuscado = null;
+		long dias = 0;
+		long dias2 = 0;
+		for(Pedidos pedido : pedidos) {
+			/*if(pedidoBuscado == null) {
+				//Calular dias d la fecha al pedido
+				dias = ChronoUnit.DAYS.between(fecha, pedido.getFecha());
+				pedidoBuscado = pedido;
+				if(dias < 0) {
+					dias = dias * -1;
+				}
+			}
+			else {
+				dias2 = ChronoUnit.DAYS.between(fecha, pedido.getFecha());
+				pedidoBuscado = pedido;
+				if(dias2 < 0 ) {
+					dias = dias * -1;
+				}
+				if (dias2 < dias){
+					pedidoBuscado = pedido;
+					dias = dias2;
+				}
+			}
+			
+		}
+			
+	}*/
+			
+			public Pedidos pedidoProximoFecha(LocalDate fecha) {
+				Pedidos pAux=new Pedidos();
+				pAux.setFecha(LocalDate.of(1, 1, 1));
+				//comparamos la diferencia de días entre la fecha de cada pedido y la 
+				//parámetro, con la diferencia de días entre la fecha auxiliar y la parámetro
+				//si la del pedido es inferior, actualizamos la variable pedido auxiliar
+				for(Pedidos p:pedidos) {
+					if(Math.abs(ChronoUnit.DAYS.between(p.getFecha(), fecha))<
+							Math.abs(ChronoUnit.DAYS.between(pAux.getFecha(), fecha))) {
+						pAux=p;
+					}
+				}
+				return pAux;
+			}
 	
 	
 	
